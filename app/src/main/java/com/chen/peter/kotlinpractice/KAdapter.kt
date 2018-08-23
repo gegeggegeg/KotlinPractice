@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import java.util.ArrayList
 
 
-class KAdapter : RecyclerView.Adapter<KHolder> {
+open class KAdapter : RecyclerView.Adapter<KHolder> {
 
     var list:ArrayList<String>
 

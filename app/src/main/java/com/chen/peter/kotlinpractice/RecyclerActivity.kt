@@ -14,23 +14,13 @@ class RecyclerActivity: AppCompatActivity() {
         setContentView(R.layout.activity_recycler)
         initList()
         var recyclerView : RecyclerView = findViewById(R.id.recycler)
-        var kAdapter:KAdapter = KAdapter(list)
-        var linearLayout : LinearLayoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = linearLayout
-        recyclerView.adapter = (kAdapter)
+        recyclerView.layoutManager = object :LinearLayoutManager(this){}
+        recyclerView.adapter = object : KAdapter(list){}
     }
 
     fun initList(){
-        list.add("apple")
-        list.add("boar")
-        list.add("cat")
-        list.add("dog")
-        list.add("elephant")
-        list.add("frog")
-        list.add("goat")
-        list.add("hen")
-        list.add("in")
-        list.add("joke")
-        list.add("king")
+        for(number in 1..20){
+            list.add(number.toString())
+        }
     }
 }
